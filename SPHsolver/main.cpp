@@ -16,7 +16,8 @@ char* windowTitle; // Pointer for changing fps counter in title each "FPS_TIME" 
 float windowWidth = 800.0;
 float windowHeight = 800.0;
 
-int main()
+int main(int argc, char** argv)
 {
+    //glutInit(&argc, argv);
     std::cout << "Hello World!\n";
 }
