@@ -13,8 +13,8 @@ Solver::~Solver()
 // Default settings
 void Solver::initialize()
 {
-	worldSize_width = 1.0f;
-	worldSize_height = 1.0f;
+	worldSizeWidth = 1.0f;
+	worldSizeHeight = 1.0f;
 
 	gravity.x = GRAVITY_X;
 	gravity.y = GRAVITY_Y;
@@ -41,7 +41,7 @@ void Solver::calculateDensityPressure()
 			// Finding vector between particles
 			vector2f r = particles[i]->position - particles[j]->position;
 			// Distance in power of 2 for equations
-			float r2 = r * r;
+			double r2 = r * r;
 
 			// Neighbour condition
 			if (r2 >= HH || r2 < 1e-12)
@@ -66,8 +66,10 @@ void Solver::calculateForces()
 {
 	for (int i = 0; i < currentParticles; i++)
 	{
-		// Default acceleration equals to zero
+		// Default settings
 		particles[i]->acceleration = 0;
+		vector2f F_pressure = 0;
+		vector2f F_viscosity = 0;
 
 		for (int j = 0; j < currentParticles; j++)
 		{
@@ -77,29 +79,27 @@ void Solver::calculateForces()
 			// Finding vector between two particles
 			vector2f r0 = particles[i]->position - particles[j]->position;
 			// Finding vector magnitude
-			float r2 = r0.x * r0.x + r0.y * r0.y;
+			double r2 = r0.x * r0.x + r0.y * r0.y;
 
 			if (r2 < HH && r2 > 1e-12)
 			{
-				float r = sqrt(r2);
+				double r = sqrt(r2);
 
 				// Part for F_pressure and F_viscosity
-				float part = particles[j]->mass / particles[j]->density / 2;
-				float Kr = H - r;
-				float Kp = SPIKY_GRAD * Kr * Kr;
+				double part = particles[j]->mass / particles[j]->density / 2;
+				double Kr = H - r;
+				double Kp = SPIKY_GRAD * Kr * Kr;
 
 				// Calculating F_pressure (4.4)
-				float tempForce = part * (particles[i]->pressure + particles[j]->pressure) * Kp;
-				particles[i]->acceleration -= r0 / r * tempForce;
+				double tempForce = part * (particles[i]->pressure + particles[j]->pressure) * Kp;
+				F_pressure -= r0 / r * tempForce;
 
-				vector2f rV = particles[j]->evelocity - particles[i]->evelocity;
-
-				float Kv = VISC_KERNEL * (H - r); //t2W
+				double Kv = VISC_KERNEL * (H - r); //t2W
 				tempForce = part * VISCOSITY * Kv;
-				particles[i]->acceleration += rV * tempForce; // f viscocity
+				F_viscosity += (particles[j]->evelocity - particles[i]->evelocity) * tempForce; 
 			}
 		}
-		particles[i]->acceleration = particles[i]->acceleration / particles[i]->density; //ai = dui/dt = Fi/pi
+		particles[i]->acceleration = (F_viscosity + F_pressure) / particles[i]->density; //ai = dui/dt = Fi/pi
 	}
 }
 
@@ -110,10 +110,10 @@ void Solver::integration()
 		particles[i]->velocity += particles[i]->acceleration * DT + gravity * DT;
 		particles[i]->position += particles[i]->velocity * DT;
 
-		if (particles[i]->position.x >= worldSize_width)
+		if (particles[i]->position.x >= worldSizeWidth)
 		{
 			particles[i]->velocity.x = particles[i]->velocity.x * BOUND_DAMPING;
-			particles[i]->position.x = worldSize_width - BOUNDARY;
+			particles[i]->position.x = worldSizeWidth - BOUNDARY;
 		}
 
 		if (particles[i]->position.x < 0.f)
@@ -122,10 +122,10 @@ void Solver::integration()
 			particles[i]->position.x = BOUNDARY;
 		}
 
-		if (particles[i]->position.y >= worldSize_height)
+		if (particles[i]->position.y >= worldSizeHeight)
 		{
 			particles[i]->velocity.y = particles[i]->velocity.y * BOUND_DAMPING;
-			particles[i]->position.y = worldSize_height - BOUNDARY;
+			particles[i]->position.y = worldSizeHeight - BOUNDARY;
 		}
 
 		if (particles[i]->position.y < 0.f)

@@ -1,25 +1,2 @@
-﻿  SPHMethods.cpp
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\vector2.h(72,30): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\Particle.h(46,1): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(20,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(54,56): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(58,49): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(61,81): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(81,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(84,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(85,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(92,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(93,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(105,61): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(105,75): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(106,56): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(110,56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(111,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(116,56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(117,39): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(122,56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(123,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(128,56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(129,39): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\SPHMethods.cpp(141,52): warning C4305: '=': truncation from 'double' to 'float'
+﻿  main.cpp
   SPHsolver.vcxproj -> C:\Users\Кирилл\Desktop\SPH\SPH1.0\SPHsolver\Debug\SPHsolver.exe

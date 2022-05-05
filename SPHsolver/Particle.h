@@ -30,9 +30,9 @@
 struct Particle
 {
 	// Scalar variables
-	float mass;
-	float density;
-	float pressure;
+	double mass;
+	double density;
+	double pressure;
 
 	// Vector variables
 	vector2f position;

@@ -20,8 +20,8 @@ public:
 	/// Variables
 	Particle* particles[MAX_NUMBER_OF_PARTICLES];
 
-	float worldSize_width;
-	float worldSize_height;
+	float worldSizeWidth;
+	float worldSizeHeight;
 
 	int currentParticles = 0;
 
