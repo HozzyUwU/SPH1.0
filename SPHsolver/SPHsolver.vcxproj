@@ -143,6 +143,7 @@
     <ClCompile Include="SPHMethods.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GlutMethods.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="SPHMethods.h" />
     <ClInclude Include="vector2.h" />
